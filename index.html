@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driver Store Info</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; background:#f2f2f2; padding:20px; }
+    .card { background:#fff; padding:20px; max-width:420px; margin:auto; border-radius:10px; }
+    select { width:100%; padding:12px; font-size:16px; }
+    .details { display:none; margin-top:15px; background:#e9f1ff; padding:15px; border-radius:8px; }
+    .btn { display:block; text-align:center; padding:10px; margin-top:10px; border-radius:6px; font-weight:bold; text-decoration:none; }
+    .call { background:#28a745; color:#fff; }
+    .map { background:#007bff; color:#fff; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Driver Store Information</h2>
+
+  <select onchange="showInfo(this.value)">
+    <option value="">Store select kare</option>
+    <option value="store1">Store A</option>
+    <option value="store2">Store B</option>
+  </select>
+
+  <div id="store1" class="details">
+    <p><b>Location:</b> Karol Bagh, Delhi</p>
+    <p><b>Mobile:</b> 9876543210</p>
+    <p><b>Alternate:</b> 9123456789</p>
+
+    <a class="btn call" href="tel:9876543210">📞 Call Store</a>
+    <a class="btn map" target="_blank"
+       href="https://www.google.com/maps/search/?api=1&query=Karol+Bagh+Delhi">
+       📍 Map Open Kare
+    </a>
+  </div>
+
+  <div id="store2" class="details">
+    <p><b>Location:</b> Andheri East, Mumbai</p>
+    <p><b>Mobile:</b> 9988776655</p>
+    <p><b>Alternate:</b> 8877665544</p>
+
+    <a class="btn call" href="tel:9988776655">📞 Call Store</a>
+    <a class="btn map" target="_blank"
+       href="https://www.google.com/maps/search/?api=1&query=Andheri+East+Mumbai">
+       📍 Map Open Kare
+    </a>
+  </div>
+</div>
+
+<script>
+function showInfo(id) {
+  document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+  if (id) document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
